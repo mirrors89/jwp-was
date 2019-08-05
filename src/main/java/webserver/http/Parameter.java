@@ -20,7 +20,7 @@ public class Parameter {
         this.parameter = parameter;
     }
 
-    public static Parameter parse(String queryString) {
+    static Parameter parse(String queryString) {
         Map<String, String> query = parseParameter(queryString);
 
         return new Parameter(query);
@@ -32,15 +32,15 @@ public class Parameter {
             .collect(Collectors.toMap(keyValue -> keyValue[QUERY_KEY_INDEX], keyValue -> keyValue[QUERY_VALUE_INDEX]));
     }
 
-    public Map<String, String> getParameters() {
+    Map<String, String> getParameters() {
         return parameter;
     }
 
-    public static Parameter empty() {
+    static Parameter empty() {
         return EMPTY_PARAMETER;
     }
 
-    public String get(String key) {
+    String get(String key) {
         return parameter.get(key);
     }
 }

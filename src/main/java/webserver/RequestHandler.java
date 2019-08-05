@@ -23,7 +23,7 @@ public class RequestHandler implements Runnable {
     private final String TEMPLATES_PATH = "./templates";
     private final Socket connection;
 
-    public RequestHandler(Socket connectionSocket) {
+    RequestHandler(Socket connectionSocket) {
         this.connection = connectionSocket;
     }
 

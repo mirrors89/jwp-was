@@ -12,7 +12,7 @@ public class RequestLine {
     private RequestURL requestURL;
     private String protocol;
 
-    public RequestLine(HttpMethod method, RequestURL requestURL, String protocol) {
+    private RequestLine(HttpMethod method, RequestURL requestURL, String protocol) {
         this.method = method;
         this.requestURL = requestURL;
         this.protocol = protocol;

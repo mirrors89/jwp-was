@@ -19,7 +19,7 @@ public class RequestURL {
         this.parameter = parameter;
     }
 
-    public static RequestURL parse(String urlString) {
+    static RequestURL parse(String urlString) {
         String path = urlString;
         int q = urlString.lastIndexOf(PATH_SEPARATOR);
 
@@ -34,14 +34,15 @@ public class RequestURL {
 
     }
 
-    public String getPath() {
+    String getPath() {
         return path;
     }
 
-    public Map<String, String> getParameters() {
+    Map<String, String> getParameters() {
         return parameter.getParameters();
     }
-    public String getParameter(String key) {
+
+    String getParameter(String key) {
         return parameter.get(key);
     }
 }
