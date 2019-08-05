@@ -6,6 +6,7 @@ public class RequestLine {
     private static final int METHOD_INDEX = 0;
     private static final int METHOD_URL = 1;
     private static final int METHOD_PROTOCOL = 2;
+    private static final String SPACE_STRING = " ";
 
     private HttpMethod method;
     private RequestURL requestURL;
@@ -18,7 +19,7 @@ public class RequestLine {
     }
 
     public static RequestLine parse(String requestLine) {
-        String[] requestLineSplit = requestLine.split(" ");
+        String[] requestLineSplit = requestLine.split(SPACE_STRING);
         HttpMethod method = HttpMethod.find(requestLineSplit[METHOD_INDEX]);
         RequestURL requestURL = RequestURL.parse(requestLineSplit[METHOD_URL]);
 

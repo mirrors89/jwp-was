@@ -25,4 +25,11 @@ public class HandlebarsTest {
         String profilePage = template.apply(user);
         log.debug("ProfilePage : {}", profilePage);
     }
+
+
+    @Test
+    void loadFileFromClasspath() throws Exception {
+        byte[] body = FileIoUtils.loadFileFromClasspath("./templates/index.html");
+        log.debug("file : {}", new String(body));
+    }
 }
